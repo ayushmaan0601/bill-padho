@@ -8,7 +8,7 @@ A proof-of-concept built on the **Sarvam AI** API stack that lets non-English-re
 
 ## Why this exists
 
-India has ~70% of its population that does not read English fluently, yet bills, prescriptions, and government notices arrive in English by default. Sarvam has already built the pickaxes for this problem — Sarvam Vision for document understanding, Sarvam-M for reasoning, Bulbul for speech. Bill-Padho is what happens when you compose them into a single consumer-facing flow.
+India has ~70% of its population that does not read English fluently, yet bills, prescriptions, and government notices arrive in English by default. Sarvam has already built the pickaxes for this problem — Sarvam Vision for document understanding, Sarvam-M for reasoning, Bulbul for speech. Swar-Patra is what happens when you compose them into a single consumer-facing flow.
 
 
 
