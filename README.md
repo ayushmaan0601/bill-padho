@@ -1,4 +1,4 @@
-# 🧾 Bill-Padho
+# 🧾 Swar-Patra
 
 > *Photograph any bill. Hear it explained in your language.*
 
