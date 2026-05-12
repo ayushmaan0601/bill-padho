@@ -71,9 +71,7 @@ The app opens at `http://localhost:8501`. Drop in any bill, pick a language, hit
 
 ---
 
-## Live demo
 
-Try it at: **[bill-padho.hf.space](https://huggingface.co/spaces/your-username/bill-padho)**
 
 ---
 
@@ -90,34 +88,6 @@ bill-padho/
 
 Everything that talks to Sarvam lives in **one file** (`sarvam_helpers.py`) so the API surface is auditable in 5 minutes.
 
----
-
-## Design choices worth defending
-
-| Choice | Why |
-| --- | --- |
-| Used the official `sarvam-ai` Python SDK over raw HTTP | Cleaner retries, typed responses, lower surface area for bugs |
-| Markdown output from Sarvam Vision (not JSON) | Bills are tables-and-prose hybrids; Markdown preserves both for the LLM |
-| `temperature=0.3` on the LLM call | Factual summarisation, not creative writing |
-| Naive sentence-aware chunking before TTS | Bulbul caps at ~500 chars/call; chunking on `.|!|?|।` preserves prosody |
-| One speaker (`anushka`) across languages | A/B'd against `meera`; `anushka` had cleaner Indic prosody on bill-style numerals |
-| No caching layer | Intentional. Every PoC choice here is "what's the minimum that ships." |
-
----
-
-## What this is *not*
-
-- Not a replacement for **Sarvam Akshar** (enterprise document digitisation batch product) — Akshar is for B2B pipelines; this is a single-bill consumer flow on top of Vision
-- Not production-ready — no auth, no rate-limit handling, no PII redaction (bills contain account numbers)
-- Not a multi-turn agent — one-shot pipeline by design
-
-## What I'd build next (if this were real)
-
-1. **PII redaction layer** before LLM/TTS — account numbers and addresses should never leave the device unredacted
-2. **WhatsApp Business API integration** — most target users will not install another app
-3. **Voice query mode** — *"jab bharna hai?"* → re-extract just the due date from the cached bill
-4. **Bill-history view** — track month-over-month for the same utility/phone number
-5. **On-device fallback via Sarvam Edge** — offline OCR + TTS for low-connectivity regions
 
 ---
 
@@ -128,8 +98,3 @@ Everything that talks to Sarvam lives in **one file** (`sarvam_helpers.py`) so t
 - [Bulbul v2 Text-to-Speech](https://docs.sarvam.ai/api-reference-docs/introduction)
 - [Streamlit](https://streamlit.io/)
 
----
-
-## Acknowledgement
-
-Built for the BITS Pilani PS-II application to **Sarvam AI** (May 2026). Not affiliated with Sarvam AI.
