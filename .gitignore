@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+*.wav
+*.mp3
+sample_bills/*.jpg
+sample_bills/*.png
+sample_bills/*.pdf
+!sample_bills/.gitkeep
